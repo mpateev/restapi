@@ -39,7 +39,12 @@ class Blog extends ResourceController
   public function show($id = null)
   {
     $data = $this->model->find($id);
+    if ($data)
+    {
     return $this->respond($data);
+    } else {
+      return $this->failNotFound('Item not found');
+    }
   }
 
   public function update($id = null)
