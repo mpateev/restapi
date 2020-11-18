@@ -76,7 +76,6 @@ class Blog extends ResourceController
       $this->model->delete($id);
       return $this->respondDeleted($data);
     } else {
-
       return $this->failNotFound('Item not found');
     }
   }
