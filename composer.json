@@ -8,8 +8,9 @@
 		"php": ">=7.2",
 		"codeigniter4/framework": "^4",
 		"bshaffer/oauth2-server-php": "^1.10",
-		"tatter/files": "^2.1"
-	},
+		"tatter/files": "^2.1",
+      "ext-json": "*"
+    },
 	"require-dev": {
 		"fzaninotto/faker": "^1.9@dev",
 		"mikey179/vfsstream": "1.6.*",
