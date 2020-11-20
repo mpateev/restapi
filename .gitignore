@@ -63,6 +63,7 @@ writable/uploads/*
 writable/debugbar/*
 
 writable/files/*
+!writable/files/*.sql
 !writable/files/index.html
 
 public/assets/uploads/*
