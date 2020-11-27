@@ -29,4 +29,4 @@
 
 <!-- CONTENT -->
 
-<h1>THIS IS A HOME SECTION!</h1>
+<div id="app"></div>
