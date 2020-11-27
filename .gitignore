@@ -89,6 +89,11 @@ tests/coverage*
 phpunit
 
 #-------------------------
+# node.js
+#-------------------------
+node_modules/
+
+#-------------------------
 # Composer
 #-------------------------
 vendor/
@@ -133,3 +138,5 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+node_modules
+node_modules

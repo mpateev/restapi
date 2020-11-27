@@ -1,7 +1,7 @@
 {
 	"name": "codeigniter_react_vue",
 	"version": "3.1.10",
-	"description": "RactJS ,VueJS, Bootstrap, Materialize-css for Codeigniter",
+	"description": "ReactJS ,VueJS, Bootstrap, Materialize-css for Codeigniter",
 	"scripts": {
 		"dev": "npm run development",
 		"development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -13,24 +13,27 @@
 	},
 	"devDependencies": {
 		"@babel/preset-react": "^7.0.0",
-		"axios": "^0.18.0",
+		"axios": "^0.21.0",
 		"bootstrap": "^4.3.1",
 		"browser-sync": "^2.26.5",
 		"browser-sync-webpack-plugin": "^2.0.1",
-		"cross-env": "^5.2",
+		"cross-env": "^7.0.2",
 		"jquery": "^3.3",
-		"laravel-mix": "^4.0.15",
+		"laravel-mix": "^5.0.9",
 		"lodash": "^4.17.11",
 		"materialize-css": "^1.0.0-rc.2",
 		"popper.js": "^1.12",
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
 		"resolve-url-loader": "^3.1.0",
 		"sass": "^1.18.0",
-		"sass-loader": "^7.1.0",
+		"sass-loader": "^10.1.0",
 		"vue": "^2.6.10",
 		"vue-template-compiler": "^2.6.10"
 	},
 	"author": "Jinesh Francisco",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"yargs": "^16.1.1"
+	}
 }
