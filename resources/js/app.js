@@ -26,7 +26,7 @@
  * and Comment the materialze require statement
  */
 
-// require('./bootstrap');
+require('./bootstrap');
 
 /**
  * if you want to use ("materialize.js") Materialize-css FrameWork please un-comment below line
@@ -45,7 +45,7 @@
  *
  */
 
- require('./react/Index');
+require('./react/Index');
 
 /**
  * ======================
@@ -62,4 +62,4 @@
  * ========================================================.
  */
 
-//  require('./axios');
+require('./axios');
