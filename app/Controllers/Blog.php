@@ -117,7 +117,7 @@ class Blog extends ResourceController
       $this->model->save($data);
       return $this->respond($data);
     }
-    }
+  }
 
   public function delete($id = null)
   {
