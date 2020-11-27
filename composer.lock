@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eda47bb7c5d56a1130c3a0b670a5db47",
+    "content-hash": "f890e006ab353da08f0cdcc7d3700a18",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-php",
@@ -69,17 +69,17 @@
             "time": "2018-12-04T00:29:32+00:00"
         },
         {
-            "name": "codeigniter4/framework",
-            "version": "v4.0.4",
+            "name": "codeigniter4/codeigniter4",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/codeigniter4/framework.git",
-                "reference": "1edcf84f77ff794640fddbfc59a10a024cd15b50"
+                "url": "https://github.com/codeigniter4/CodeIgniter4.git",
+                "reference": "b8c2faa584a45474bf9cd51a1cd155d49059e755"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/1edcf84f77ff794640fddbfc59a10a024cd15b50",
-                "reference": "1edcf84f77ff794640fddbfc59a10a024cd15b50",
+                "url": "https://api.github.com/repos/codeigniter4/CodeIgniter4/zipball/b8c2faa584a45474bf9cd51a1cd155d49059e755",
+                "reference": "b8c2faa584a45474bf9cd51a1cd155d49059e755",
                 "shasum": ""
             },
             "require": {
@@ -94,19 +94,38 @@
             },
             "require-dev": {
                 "codeigniter4/codeigniter4-standard": "^1.0",
-                "fzaninotto/faker": "^1.9@dev",
-                "mikey179/vfsstream": "1.6.*",
+                "fakerphp/faker": "^1.9",
+                "mikey179/vfsstream": "^1.6",
+                "phpstan/phpstan": "^0.12",
                 "phpunit/phpunit": "^8.5",
                 "predis/predis": "^1.1",
+                "rector/rector": "^0.8",
                 "squizlabs/php_codesniffer": "^3.3"
             },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
                     "CodeIgniter\\": "system/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Utils\\": "utils"
+                }
+            },
+            "scripts": {
+                "post-update-cmd": [
+                    "CodeIgniter\\ComposerScripts::postUpdate",
+                    "bash admin/setup.sh"
+                ],
+                "analyze": [
+                    "phpstan analyze"
+                ],
+                "test": [
+                    "phpunit"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -114,10 +133,11 @@
             "homepage": "https://codeigniter.com",
             "support": {
                 "forum": "http://forum.codeigniter.com/",
+                "source": "https://github.com/codeigniter4/CodeIgniter4",
                 "slack": "https://codeigniterchat.slack.com",
-                "source": "https://github.com/codeigniter4/CodeIgniter4"
+                "issues": "https://github.com/codeigniter4/CodeIgniter4/issues"
             },
-            "time": "2020-07-16T03:44:28+00:00"
+            "time": "2020-11-27T09:04:51+00:00"
         },
         {
             "name": "kint-php/kint",
@@ -439,27 +459,26 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "dev-master",
+            "version": "v1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "ac73e5287024f5e98dd6d0bf10e6a6f7877b7513"
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/ac73e5287024f5e98dd6d0bf10e6a6f7877b7513",
-                "reference": "ac73e5287024f5e98dd6d0bf10e6a6f7877b7513",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3 || ^7.0 || ^8.0"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
                 "ext-intl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7",
                 "squizlabs/php_codesniffer": "^2.9.2"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -488,10 +507,10 @@
             ],
             "support": {
                 "issues": "https://github.com/fzaninotto/Faker/issues",
-                "source": "https://github.com/fzaninotto/Faker/tree/master"
+                "source": "https://github.com/fzaninotto/Faker/tree/v1.9.1"
             },
             "abandoned": true,
-            "time": "2020-10-27T14:15:58+00:00"
+            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "mikey179/vfsstream",
@@ -1218,16 +1237,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.10",
+            "version": "8.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ebd3963f9ba330f98a8fe6ccf5390839e868af75"
+                "reference": "3123601e3b29339b20129acc3f989cfec3274566"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ebd3963f9ba330f98a8fe6ccf5390839e868af75",
-                "reference": "ebd3963f9ba330f98a8fe6ccf5390839e868af75",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3123601e3b29339b20129acc3f989cfec3274566",
+                "reference": "3123601e3b29339b20129acc3f989cfec3274566",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1262,7 @@
                 "phar-io/version": "^2.0.1",
                 "php": "^7.2",
                 "phpspec/prophecy": "^1.10.3",
-                "phpunit/php-code-coverage": "^7.0.11",
+                "phpunit/php-code-coverage": "^7.0.12",
                 "phpunit/php-file-iterator": "^2.0.2",
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.1.2",
@@ -1299,7 +1318,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.10"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.11"
             },
             "funding": [
                 {
@@ -1311,7 +1330,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-27T05:24:14+00:00"
+            "time": "2020-11-27T12:46:45+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2160,11 +2179,12 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
+        "codeigniter4/codeigniter4": 20,
         "fzaninotto/faker": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.2",
