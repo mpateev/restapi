@@ -1,64 +1,102 @@
-# CodeIgniter 4 Application Starter
+# React_Vue_Frontend_Scaffolding
 
-## What is CodeIgniter?
+> A Simple  **Front-end Scaffolding** using  **React/Vue** for 
+> web Development .. support  PHP, Codeigniter , Django, ASP ...etc   
+> simply download and extract into your project , link `style.css` and `main.js` files to your master view 
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
-More information can be found at the [official site](http://codeigniter.com).
+> `<link rel="stylesheet" href="https://www.yoursite.com/public/css/style.css">`
 
-This repository holds a composer-installable app starter.
-It has been built from the 
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+> `<script src="https://www.yoursite.com/public/js/main.js"></script>`
+> done
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+# Introduction
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/). 
+React or Vue Front-end Framework top on other Language  ..
 
-## Installation & updates
+laravel like Front-end scaffolding using npm package **[laravel-mix](https://github.com/JeffreyWay/laravel-mix)** 
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- **CSS Frameworks**
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
 
-## Setup
+	> "Twitter **Bootstrap** / **Materialize-css** " .
+	
+   >Custom CSS using sass [7-1 architecture pattern]
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## Usage
+- **Codeigniter using for demonstration**
+- Download   **Codeigniter latest Version** and unzip it .
+- Clone or Download the Repository into  codeigniter folder..
+- Open `package.json` file in a text editor remove unnecessary packages...
 
-## Important Change with index.php
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+if you don't want to use `Vue` remove  below lines from package.json file
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+     "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+============================
+    or if you don't need `React` remove below lines
+    ============================
+   
 
-**Please** read the user guide for a better explanation of how CI4 works!
-The user guide updating and deployment is a bit awkward at the moment, but we are working on it!
+     "@babel/preset-react": "^7.0.0",
+       "react": "^16.8.6",
+      "react-dom": "^16.8.6",
 
-## Repository Management
+ - Run `npm install`  
+ -  **For  React**
+	 >by default its configured for  react ... 
+	 
+	 >if you don't want to use `Vue` remove  below lines from **package.json** file
+	 
+	`"vue": "^2.6.10",`
+	`"vue-template-compiler": "^2.6.10"`
 
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- **For Vue**  
+	> Open `webpack.mix.js` file in a text editor
+   
+   comment the section  
+   `mix.react(.....).sass(....);`
+   
+	>and  remove comment for `vue` configuration 
+   
+	 >`mix.js(.....).sass(....);`
 
-This repository is a "distribution" one, built by our release preparation script. 
-Problems with it can be raised on our forum, or as issues in the main repository.
+    
+	 >and open `app.js` file in folder  `resources/js/app.js`
+ 
+	 >remove Line comment  `window._ = require('lodash');` and `require('./vue');`
+	 
+ 	>also comment Line `require('./react/Index');`
 
-## Server Requirements
+	if you want to use other js libraries such as **Axios** , **lodash**, **Bootstrap** or **Materialize-css** ...etc
+	remove the Comment in appropriate line....
 
-PHP version 7.2 or higher is required, with the following extensions installed: 
+- **CSS FrameWork**  
+	- >**7-1 Sass Architecture** (default configuration)
+	- > It a good idea to write custom css using scss... 
+	- >more about [7-1 Sass Architecture](https://sass-guidelin.es/)
+	- >**Twitter Bootstrap**  
+	- - > open app.scss file from `resources\sass\app.scss`
+	- - > remove Line comment  `@import './vendor/bootstrap';`
+	- - > if you want to use  `Bootstrap.js`  goto `resources\js\app.js` remove Line comment `require('./bootstrap');`
+	 - - > jquery and popper.js are bootsrtap dependencies
+		
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+	- >**Materialize-css** 
+	- - > open app.scss file from `resources\sass\app.scss`
+	- - > remove Line comment  `@import './vendor/materialize';`
+	- - > if you want to use  `materialize.js`  goto `resources\js\app.js` remove Line comment `require('./materialize');`
+	- - >**warning** Cross-site Scripting (XSS)-Affecting materialize-css
+	- - > vulnerability can arise when user input is provided to the `tooltip` [more About](https://snyk.io/vuln/SNYK-JS-MATERIALIZECSS-174148)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- Link `css and js` files into `view` file
+	
+	>`<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/style.css">`
+	
+	and 
+	
+	>`<script src="<?php echo base_url(); ?>public/js/main.js"></script>`
+	
+	>add **url** helper in  `autoload.php `   
 
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+- run  `npm run watch` or `npm run prod` 
